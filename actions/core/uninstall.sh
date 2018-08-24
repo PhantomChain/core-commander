@@ -4,7 +4,7 @@ core_uninstall ()
 {
     ascii
 
-    heading "Uninstalling Ark Core..."
+    heading "Uninstalling PHANTOM Core..."
 
     forger_delete
 
@@ -25,7 +25,5 @@ core_uninstall ()
     sudo rm -rf "$CORE_DATA"
     success "Deleted Configuration!"
 
-    success "Uninstalled Ark Core!"
-
-    core_version
+    success "Uninstalled PHANTOM Core!"
 }

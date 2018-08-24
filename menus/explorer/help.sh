@@ -4,28 +4,28 @@ menu_manage_explorer_help ()
 {
     ascii
 
-    text_yellow "    Install Ark Explorer (I)"
-    text_white "    installs Ark Explorer on your server."
+    text_yellow "    Install PHANTOM Explorer (I)"
+    text_white "    installs PHANTOM Explorer on your server."
     echo
 
-    text_yellow "    Stop Ark Explorer (K)"
-    text_white "    stops the Ark Explorer process (shown only if the Ark Explorer process is running)."
+    text_yellow "    Stop PHANTOM Explorer (K)"
+    text_white "    stops the PHANTOM Explorer process (shown only if the PHANTOM Explorer process is running)."
     echo
 
-    text_yellow "    Start Ark Explorer (S)"
-    text_white "    starts the Ark Explorer process (shown only if Ark Explorer is installed)."
+    text_yellow "    Start PHANTOM Explorer (S)"
+    text_white "    starts the PHANTOM Explorer process (shown only if PHANTOM Explorer is installed)."
     echo
 
-    text_yellow "    Restart Ark Explorer (R)"
-    text_white "    restarts (stops and then starts) the Ark Explorer process (shown only if Ark Explorer is installed and running)."
+    text_yellow "    Restart PHANTOM Explorer (R)"
+    text_white "    restarts (stops and then starts) the PHANTOM Explorer process (shown only if PHANTOM Explorer is installed and running)."
     echo
 
-    text_yellow "    Update Ark Explorer (U)"
-    text_white "    updates Ark Explorer if a new version is available (shown only if Ark Explorer is installed)."
+    text_yellow "    Update PHANTOM Explorer (U)"
+    text_white "    updates PHANTOM Explorer if a new version is available (shown only if PHANTOM Explorer is installed)."
     echo
 
-    text_yellow "    Uninstall Ark Explorer (P)"
-    text_white "    uninstalls Ark Explorer from your system (shown only if Ark Explorer is installed)."
+    text_yellow "    Uninstall PHANTOM Explorer (P)"
+    text_white "    uninstalls PHANTOM Explorer from your system (shown only if PHANTOM Explorer is installed)."
     echo
 
     text_yellow "    Show Log (L)"
@@ -37,7 +37,7 @@ menu_manage_explorer_help ()
 
     divider
 
-    text_blue "    For more information head over to https://docs.ark.io/"
+    text_blue "    For more information head over to https://phantomdocs.readme.io/"
     echo
 
     press_to_continue

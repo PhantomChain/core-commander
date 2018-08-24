@@ -12,7 +12,7 @@ core_configure_log_level ()
 
     local validLevels=("debug" "info" "warning" "error")
 
-    local inputLevel=$ARK_LOG_LEVEL
+    local inputLevel=$PHANTOM_LOG_LEVEL
 
     select opt in "${validLevels[@]}"; do
         case "$opt" in
@@ -38,8 +38,8 @@ core_configure_log_level ()
         esac
     done
 
-    if [[ "$ARK_LOG_LEVEL" != "$inputLevel" ]]; then
-        sed -i -e "s/ARK_LOG_LEVEL=$ARK_LOG_LEVEL/ARK_LOG_LEVEL=$inputLevel/g" "$envFile"
+    if [[ "$PHANTOM_LOG_LEVEL" != "$inputLevel" ]]; then
+        sed -i -e "s/PHANTOM_LOG_LEVEL=$PHANTOM_LOG_LEVEL/PHANTOM_LOG_LEVEL=$inputLevel/g" "$envFile"
     fi
 
     . "$envFile"

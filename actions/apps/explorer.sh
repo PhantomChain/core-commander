@@ -4,25 +4,13 @@ explorer_install ()
 {
     ascii
 
-    heading "Installing Ark Explorer..."
+    heading "Installing PHANTOM Explorer..."
 
     sudo mkdir "$EXPLORER_DIR" >> "$commander_log" 2>&1
     sudo chown "$USER":"$USER" "$EXPLORER_DIR" >> "$commander_log" 2>&1
 
     git clone "$EXPLORER_REPO" "$EXPLORER_DIR" | tee -a "$commander_log"
     cd "$EXPLORER_DIR"
-
-    info "Installing dependencies..."
-    yarn install | tee -a "$commander_log"
-
-    local check=${PIPESTATUS[0]}
-
-    if [ "$check" -eq 0 ]; then
-        success "Installed dependencies!"
-    else
-        error "Could not install dependencies!"
-        return
-    fi
 
     info "Building..."
     yarn build:"$CORE_NETWORK" | tee -a "$commander_log"
@@ -36,7 +24,7 @@ explorer_install ()
         return
     fi
 
-    success "Installed Ark Explorer!"
+    success "Installed PHANTOM Explorer!"
 }
 
 explorer_uninstall ()
@@ -45,13 +33,13 @@ explorer_uninstall ()
 
     explorer_stop
 
-    heading "Uninstalling Ark Explorer..."
+    heading "Uninstalling PHANTOM Explorer..."
 
     cd "$commander_dir"
 
     sudo rm -rf "$EXPLORER_DIR"
 
-    success "Uninstalled Ark Explorer!"
+    success "Uninstalled PHANTOM Explorer!"
 }
 
 explorer_update ()
@@ -69,11 +57,11 @@ explorer_update ()
     if [[ "$remote_version" == "$local_version" ]]; then
         STATUS_EXPLORER_UPDATE="No"
 
-        info "You already have the latest supported Ark Explorer version."
+        info "You already have the latest PHANTOM Explorer version that we support."
     else
         STATUS_EXPLORER_UPDATE="Yes"
 
-        read -p "An update is available for Ark Explorer, do you want to install it? [Y/n] : " choice
+        read -p "An update is available for PHANTOM Explorer, do you want to install it? [Y/n] : " choice
 
         if [[ -z "$choice" || "$choice" =~ ^(yes|y|Y) ]]; then
             explorer_stop
@@ -96,7 +84,7 @@ explorer_start ()
 
     heading "Starting Explorer..."
 
-    pm2 start $commander_ecosystem --only ark-explorer >> "$commander_log" 2>&1
+    EXPLORER_HOST="0.0.0.0" EXPLORER_PORT=4200 pm2 start $commander_ecosystem --only phantom-explorer >> "$commander_log" 2>&1
 
     success "Started Explorer!"
 }
@@ -118,7 +106,7 @@ explorer_stop ()
 
     heading "Stopping Explorer..."
 
-    pm2 stop $commander_ecosystem --only ark-explorer >> "$commander_log" 2>&1
+    pm2 stop $commander_ecosystem --only phantom-explorer >> "$commander_log" 2>&1
 
     success "Stopped Explorer!"
 }
@@ -129,12 +117,12 @@ explorer_logs ()
     echo -e "\n$(text_yellow " Use Ctrl+C to return to menu")\n"
     trap : INT
 
-    pm2 logs ark-explorer
+    pm2 logs phantom-explorer
 }
 
 explorer_status ()
 {
-    local status=$(pm2status "ark-explorer" | awk '{print $13}')
+    local status=$(pm2status "phantom-explorer" | awk '{print $13}')
 
     if [[ "$status" == "online" ]]; then
         STATUS_EXPLORER="On"

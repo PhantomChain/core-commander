@@ -4,7 +4,7 @@ database_drop_user ()
 {
     heading "Dropping Database User..."
 
-    sudo -u postgres dropuser --if-exists "${ARK_DB_USERNAME}" | tee -a "$commander_log"
+    sudo -u postgres dropuser --if-exists "${PHANTOM_DB_USERNAME}" | tee -a "$commander_log"
 
     success "Dropped Database User!"
 }
@@ -13,7 +13,7 @@ database_destroy ()
 {
     heading "Destroying Database..."
 
-    sudo -u postgres dropdb --if-exists "${ARK_DB_DATABASE}" | tee -a "$commander_log"
+    sudo -u postgres dropdb --if-exists "${PHANTOM_DB_DATABASE}" | tee -a "$commander_log"
 
     success "Destroyed Database!"
 }
@@ -39,17 +39,17 @@ database_create ()
         sudo -u postgres psql -c "CREATE USER ${ARK_DB_USERNAME} WITH PASSWORD '${ARK_DB_PASSWORD}' CREATEDB;" | tee -a "$commander_log"
     fi
 
-    local databaseExists=$(psql -l | grep "${ARK_DB_DATABASE}" | wc -l)
+    local databaseExists=$(psql -l | grep "${PHANTOM_DB_DATABASE}" | wc -l)
 
     if [[ $databaseExists == 1 ]]; then
-        read -p "The database ${ARK_DB_DATABASE} already exists, do you want to overwrite it? [y/N] : " choice
+        read -p "The database ${PHANTOM_DB_DATABASE} already exists, do you want to overwrite it? [y/N] : " choice
 
         if [[ "$choice" =~ ^(yes|y|Y) ]]; then
-            dropdb "${ARK_DB_DATABASE}" | tee -a "$commander_log"
-            createdb "${ARK_DB_DATABASE}" | tee -a "$commander_log"
+            dropdb "${PHANTOM_DB_DATABASE}" | tee -a "$commander_log"
+            createdb "${PHANTOM_DB_DATABASE}" | tee -a "$commander_log"
         fi
     else
-        createdb "${ARK_DB_DATABASE}" | tee -a "$commander_log"
+        createdb "${PHANTOM_DB_DATABASE}" | tee -a "$commander_log"
     fi
 
     wait_to_continue

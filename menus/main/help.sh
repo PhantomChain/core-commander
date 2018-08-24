@@ -4,28 +4,28 @@ menu_main_help ()
 {
     ascii
 
-    text_yellow "    Install Ark Core (I)"
-    text_white "    starts the Ark Core intall process."
+    text_yellow "    Install PHANTOM Core (I)"
+    text_white "    starts the PHANTOM core intall process."
     echo
 
-    text_yellow "    Manage Ark Core (A)"
-    text_white "    opens the Ark Core options."
+    text_yellow "    Manage PHANTOM Core (A)"
+    text_white "    opens the PHANTOM core options."
     echo
 
     text_yellow "    Manage Relay (R)"
-    text_white "    opens the Ark relay node process options."
+    text_white "    opens the PHANTOM relay node process options."
     echo
 
     text_yellow "    Manage Forger (F)"
-    text_white "    opens the Ark forger node process options."
+    text_white "    opens the PHANTOM forger node process options."
     echo
 
     text_yellow "    Manage Explorer (E)"
-    text_white "    opens the Ark Explorer options."
+    text_white "    opens the PHANTOM explorer options."
     echo
 
     text_yellow "    Manage Commander (C)"
-    text_white "    opens the Ark Commander options."
+    text_white "    opens the PHANTOM commander options."
     echo
 
     text_yellow "    Miscellaneous (M)"
@@ -33,7 +33,7 @@ menu_main_help ()
     echo
 
     text_yellow "    Show Logs (L)"
-    text_white "    opens the Ark Core logs so you can see what is going on with your node process in real-time."
+    text_white "    opens the Phantom core logs so you can see what is going on with your node process in real-time."
     echo
 
     text_yellow "    Show Process Monitor (P)"
@@ -44,12 +44,12 @@ menu_main_help ()
     text_white "    opens the help file where all this information is available."
     echo
 
-    text_yellow "    Exit (X)"
-    text_white "    exits Ark Commander"
+    text_yellow "    X — Exit"
+    text_white "    exits PHANTOM Commander"
 
     divider
 
-    text_blue "    For more information head on over to https://docs.ark.io/"
+    text_blue "    For more information head on over to https://docs.phantom.io/"
     echo
 
     press_to_continue
