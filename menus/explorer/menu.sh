@@ -7,15 +7,15 @@ menu_manage_explorer ()
     explorer_status
 
     if [[ "$STATUS_EXPLORER" = "On" ]]; then
-        text_white "    K. Stop Ark Explorer"
-        text_white "    R. Restart Ark Explorer"
+        text_white "    P. Uninstall PHANTOM Explorer"
+        text_white "    K. Stop PHANTOM Explorer"
+        text_white "    R. Restart PHANTOM Explorer"
+        text_white "    U. Update PHANTOM Explorer"
     else
         if [[ -d "$EXPLORER_DIR" ]]; then
-            text_white "    S. Start Ark Explorer"
-            text_white "    U. Update Ark Explorer"
-            text_white "    P. Uninstall Ark Explorer"
+            text_white "    S. Start PHANTOM Explorer"
         else
-            text_white "    I. Install Ark Explorer"
+            text_white "    I. Install PHANTOM Explorer"
         fi
 
         divider
