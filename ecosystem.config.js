@@ -13,7 +13,7 @@ const getPasswordFromArgs = () => {
 
 module.exports = {
   apps : [{
-    name: 'ark-core-relay',
+    name: 'phantom-core-relay',
     script: `${process.env.CORE_DIR}/packages/core/dist/index.js`,
     args: `relay --data ${process.env.CORE_DATA}
                  --config ${process.env.CORE_CONFIG}
@@ -22,7 +22,7 @@ module.exports = {
     min_uptime: '5m',
     kill_timeout: 30000
   }, {
-    name: 'ark-core-forger',
+    name: 'phantom-core-forger',
     script: `${process.env.CORE_DIR}/packages/core/dist/index.js`,
     args: `forger --data ${process.env.CORE_DATA}
                   --config ${process.env.CORE_CONFIG}
@@ -31,13 +31,13 @@ module.exports = {
     min_uptime: '5m',
     kill_timeout: 30000,
     env: {
-        ARK_FORGER_BIP38: delegates.bip38,
-        ARK_FORGER_PASSWORD: getPasswordFromArgs()
+        PHANTOM_FORGER_BIP38: delegates.bip38,
+        PHANTOM_FORGER_PASSWORD: getPasswordFromArgs()
     }
   }, {
-    name: 'ark-explorer',
+    name: 'phantom-explorer',
     script: `${process.env.EXPLORER_DIR}/express-server.js`,
-    args: `--name ark-explorer`,
+    args: `--name phantom-explorer`,
     max_restarts: 5,
     min_uptime: '5m',
     kill_timeout: 30000,

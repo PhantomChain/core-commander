@@ -5,7 +5,7 @@ setup_environment_file ()
     local envFile="${CORE_DATA}/.env"
 
     if [[ ! -e "${envFile}" ]]; then
-        mkdir -p "${HOME}/.ark"
+        mkdir -p "${HOME}/.phantom"
         touch "${envFile}"
     fi
 
@@ -30,7 +30,7 @@ setup_environment_file ()
     fi
 
     if ! grep -q "PHANTOM_DB_DATABASE" "${envFile}"; then
-        echo "PHANTOM_DB_DATABASE=ark_${CORE_NETWORK}" >> "$envFile" 2>&1
+        echo "PHANTOM_DB_DATABASE=phantom_${CORE_NETWORK}" >> "$envFile" 2>&1
     fi
 
     . "${envFile}"
@@ -51,14 +51,14 @@ setup_environment ()
         # create ~/.commander
         touch "$commander_config"
 
-        echo "CORE_REPO=https://github.com/PhantomCore/core" >> "$commander_config" 2>&1
+        echo "CORE_REPO=https://github.com/PhantomChain/core" >> "$commander_config" 2>&1
         echo "CORE_BRANCH=master" >> "$commander_config" 2>&1
         echo "CORE_DIR=${HOME}/phantom-core" >> "$commander_config" 2>&1
         echo "CORE_DATA=${HOME}/.phantom" >> "$commander_config" 2>&1
         echo "CORE_CONFIG=${HOME}/.phantom/config" >> "$commander_config" 2>&1
         echo "CORE_TOKEN=phantom" >> "$commander_config" 2>&1
         echo "CORE_NETWORK=mainnet" >> "$commander_config" 2>&1
-        echo "EXPLORER_REPO=https://github.com/PhantomCore/explorer" >> "$commander_config" 2>&1
+        echo "EXPLORER_REPO=https://github.com/PhantomChain/explorer" >> "$commander_config" 2>&1
         echo "EXPLORER_DIR=${HOME}/phantom-explorer" >> "$commander_config" 2>&1
 
         . "$commander_config"
@@ -73,7 +73,7 @@ setup_environment ()
 
     if [[ -e "$commander_config" ]]; then
         if ! grep -q "CORE_REPO" "${commander_config}"; then
-            echo "CORE_REPO=https://github.com/ArkEcosystem/core" >> "$commander_config" 2>&1
+            echo "CORE_REPO=https://github.com/PhantomChain/core" >> "$commander_config" 2>&1
         fi
 
         if ! grep -q "CORE_BRANCH" "${commander_config}"; then
@@ -81,19 +81,19 @@ setup_environment ()
         fi
 
         if ! grep -q "CORE_DIR" "${commander_config}"; then
-            echo "CORE_DIR=${HOME}/ark-core" >> "$commander_config" 2>&1
+            echo "CORE_DIR=${HOME}/phantom-core" >> "$commander_config" 2>&1
         fi
 
         if ! grep -q "CORE_DATA" "${commander_config}"; then
-            echo "CORE_DATA=${HOME}/.ark" >> "$commander_config" 2>&1
+            echo "CORE_DATA=${HOME}/.phantom" >> "$commander_config" 2>&1
         fi
 
         if ! grep -q "CORE_CONFIG" "${commander_config}"; then
-            echo "CORE_CONFIG=${HOME}/.ark/config" >> "$commander_config" 2>&1
+            echo "CORE_CONFIG=${HOME}/.phantom/config" >> "$commander_config" 2>&1
         fi
 
         if ! grep -q "CORE_TOKEN" "${commander_config}"; then
-            echo "CORE_TOKEN=ark" >> "$commander_config" 2>&1
+            echo "CORE_TOKEN=phantom" >> "$commander_config" 2>&1
         fi
 
         if ! grep -q "CORE_NETWORK" "${commander_config}"; then
@@ -101,11 +101,11 @@ setup_environment ()
         fi
 
         if ! grep -q "EXPLORER_REPO" "${commander_config}"; then
-            echo "EXPLORER_REPO=https://github.com/ArkEcosystem/explorer" >> "$commander_config" 2>&1
+            echo "EXPLORER_REPO=https://github.com/PhantomChain/explorer" >> "$commander_config" 2>&1
         fi
 
         if ! grep -q "EXPLORER_DIR" "${commander_config}"; then
-            echo "EXPLORER_DIR=${HOME}/ark-explorer" >> "$commander_config" 2>&1
+            echo "EXPLORER_DIR=${HOME}/phantom-explorer" >> "$commander_config" 2>&1
         fi
 
         . "$commander_config"
