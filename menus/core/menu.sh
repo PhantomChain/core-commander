@@ -7,9 +7,9 @@ menu_manage_core ()
     forger_status
     relay_status
 
-    text_white "    U. Update PHANTOM Core"
-    text_white "    P. Uninstall PHANTOM Core"
-    text_white "    C. Configure PHANTOM Core"
+    text_white "    U. Update PhantomChain"
+    text_white "    P. Uninstall PhantomChain"
+    text_white "    C. Configure PhantomChain"
 
     divider
 

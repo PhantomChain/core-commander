@@ -13,8 +13,8 @@ const getPasswordFromArgs = () => {
 
 module.exports = {
   apps : [{
-    name: 'ark-core-relay',
-    script: `${process.env.CORE_DIR}/packages/core/bin/ark`,
+    name: 'phantom-core-relay',
+    script: `${process.env.CORE_DIR}/packages/core/bin/phantom`,
     args: `relay --data ${process.env.CORE_DATA}
                  --config ${process.env.CORE_CONFIG}
                  --token ${process.env.CORE_TOKEN}
@@ -23,8 +23,8 @@ module.exports = {
     min_uptime: '5m',
     kill_timeout: 30000
   }, {
-    name: 'ark-core-forger',
-    script: `${process.env.CORE_DIR}/packages/core/bin/ark`,
+    name: 'phantom-core-forger',
+    script: `${process.env.CORE_DIR}/packages/core/bin/phantom`,
     args: `forger --data ${process.env.CORE_DATA}
                   --config ${process.env.CORE_CONFIG}
                   --token ${process.env.CORE_TOKEN}
@@ -33,13 +33,13 @@ module.exports = {
     min_uptime: '5m',
     kill_timeout: 30000,
     env: {
-        ARK_FORGER_BIP38: delegates.bip38,
-        ARK_FORGER_PASSWORD: getPasswordFromArgs()
+        PHANTOM_FORGER_BIP38: delegates.bip38,
+        PHANTOM_FORGER_PASSWORD: getPasswordFromArgs()
     }
   }, {
-    name: 'ark-explorer',
+    name: 'phantom-explorer',
     script: `${process.env.EXPLORER_DIR}/express-server.js`,
-    args: `--name ark-explorer`,
+    args: `--name phantom-explorer`,
     max_restarts: 5,
     min_uptime: '5m',
     kill_timeout: 30000,

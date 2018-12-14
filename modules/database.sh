@@ -26,17 +26,17 @@ database_create ()
 
     wait_to_continue
 
-    local userExists=$(sudo -u postgres psql -c "SELECT * FROM pg_user WHERE username = '${ARK_DB_USERNAME}'" | grep -c "1 row")
+    local userExists=$(sudo -u postgres psql -c "SELECT * FROM pg_user WHERE usename = '$PHANTOM_DB_USERNAME'" | grep -c "1 row")
 
     if [[ $userExists == 1 ]]; then
-        read -p "The database user ${ARK_DB_USERNAME} already exists, do you want to overwrite it? [y/N] : " choice
+        read -p "The database user ${PHANTOM_DB_USERNAME} already exists, do you want to overwrite it? [y/N] : " choice
 
         if [[ "$choice" =~ ^(yes|y|Y) ]]; then
-            sudo -u postgres psql -c "DROP USER ${ARK_DB_USERNAME}" | tee -a "$commander_log"
-            sudo -u postgres psql -c "CREATE USER ${ARK_DB_USERNAME} WITH PASSWORD '${ARK_DB_PASSWORD}' CREATEDB;" | tee -a "$commander_log"
+            sudo -u postgres psql -c "DROP USER $PHANTOM_DB_USERNAME" | tee -a "$commander_log"
+            sudo -u postgres psql -c "CREATE USER $PHANTOM_DB_USERNAME WITH PASSWORD 'password' CREATEDB;" | tee -a "$commander_log"
         fi
     else
-        sudo -u postgres psql -c "CREATE USER ${ARK_DB_USERNAME} WITH PASSWORD '${ARK_DB_PASSWORD}' CREATEDB;" | tee -a "$commander_log"
+        sudo -u postgres psql -c "CREATE USER $PHANTOM_DB_USERNAME WITH PASSWORD 'password' CREATEDB;" | tee -a "$commander_log"
     fi
 
     local databaseExists=$(psql -l | grep "${PHANTOM_DB_DATABASE}" | wc -l)

@@ -25,7 +25,7 @@ forger_restart ()
 
     heading "Restarting Forger..."
 
-    pm2 restart phantom-core-forger >> "$commander_log" 2>&1
+    pm2 restart $commander_ecosystem --only phantom-core-forger >> "$commander_log" 2>&1
 
     forger_status
 

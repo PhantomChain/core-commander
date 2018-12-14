@@ -4,7 +4,7 @@ core_uninstall ()
 {
     ascii
 
-    heading "Uninstalling PHANTOM Core..."
+    heading "Uninstalling PhantomChain..."
 
     forger_delete
 
@@ -25,5 +25,7 @@ core_uninstall ()
     sudo rm -rf "$CORE_DATA"
     success "Deleted Configuration!"
 
-    success "Uninstalled PHANTOM Core!"
+    success "Uninstalled PhantomChain!"
+
+    core_version
 }

@@ -12,6 +12,18 @@ explorer_install ()
     git clone "$EXPLORER_REPO" "$EXPLORER_DIR" | tee -a "$commander_log"
     cd "$EXPLORER_DIR"
 
+    info "Installing dependencies..."
+    yarn install | tee -a "$commander_log"
+
+    local check=${PIPESTATUS[0]}
+
+    if [ "$check" -eq 0 ]; then
+        success "Installed dependencies!"
+    else
+        error "Could not install dependencies!"
+        return
+    fi
+
     info "Building..."
     yarn build:"$CORE_NETWORK" | tee -a "$commander_log"
 
@@ -95,7 +107,7 @@ explorer_restart ()
 
     heading "Restarting Explorer..."
 
-    pm2 restart $commander_ecosystem --only ark-explorer >> "$commander_log" 2>&1
+    pm2 restart $commander_ecosystem --only phantom-explorer >> "$commander_log" 2>&1
 
     success "Restarted Explorer!"
 }

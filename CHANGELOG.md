@@ -15,13 +15,13 @@ followed by `npm link dotenv` inside the commander directory.
 - When using `bip38` the password is no longer exposed in the process monitor.
 - Starting the relay/forger/explorer manually is now easier:
     Relay:
-    `pm2 start --only ark-core-relay`
+    `pm2 start --only phantom-core-relay`
     Forger without bip38 encryption:
-    `pm2 start --only ark-core-forger`
+    `pm2 start --only phantom-core-forger`
     Forger with bip38 encryption:
-    `pm2 start --only ark-core-forger -- --password ark`
+    `pm2 start --only phantom-core-forger -- --password phantom`
     Explorer:
-    `pm2 start --only ark-core-explorer`
+    `pm2 start --only phantom-core-explorer`
 
 ### Removed
 - Redis
@@ -43,7 +43,7 @@ followed by `npm link dotenv` inside the commander directory.
 - Ubuntu 18.04 ntpd & timesyncd service collision
 - Add `git fetch` to properly check for remote diffs
 - `pm2 status` name collisions
-- Directory removal issue during Ark Core uninstall
+- Directory removal issue during PhantomChain uninstall
 
 ### Changed
 - Improved logging & installations by using tee

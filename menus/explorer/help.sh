@@ -37,7 +37,7 @@ menu_manage_explorer_help ()
 
     divider
 
-    text_blue "    For more information head over to https://phantomdocs.readme.io/"
+    text_blue "    For more information head over to https://docs.phantom.org/"
     echo
 
     press_to_continue

@@ -5,9 +5,9 @@ core_install ()
     ascii
 
     if [[ -d "$CORE_DIR" ]]; then
-        error "We found an existing PHANTOM Core installation! Please use the uninstall option first."
+        error "We found an existing PhantomChain installation! Please use the uninstall option first."
     else
-        heading "Installing PHANTOM Core..."
+        heading "Installing PhantomChain..."
 
         # Prepare
         sudo mkdir "$CORE_DIR" >> "$commander_log" 2>&1
@@ -22,6 +22,10 @@ core_install ()
         # Configure
         core_configure
 
-        success "Installed PHANTOM Core!"
+        ascii
+
+        success "Installed PhantomChain!"
+
+        core_version
     fi
 }

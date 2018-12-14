@@ -7,11 +7,11 @@ menu_manage_core_help ()
     divider
 
     text_yellow "    Update PHANTOM (U)"
-    text_white "    update PHANTOM core if a new version is available."
+    text_white "    update PhantomChain if a new version is available."
     echo
 
     text_yellow "    Uninstall PHANTOM (P)"
-    text_white "    uninstall PHANTOM Core from your system."
+    text_white "    uninstall PhantomChain from your system."
     echo
 
     text_yellow "    Configure PHANTOM (C)"

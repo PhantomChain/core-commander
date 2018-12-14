@@ -4,12 +4,12 @@ menu_main_help ()
 {
     ascii
 
-    text_yellow "    Install PHANTOM Core (I)"
-    text_white "    starts the PHANTOM core intall process."
+    text_yellow "    Install PhantomChain (I)"
+    text_white "    starts the PhantomChain intall process."
     echo
 
-    text_yellow "    Manage PHANTOM Core (A)"
-    text_white "    opens the PHANTOM core options."
+    text_yellow "    Manage PhantomChain (A)"
+    text_white "    opens the PhantomChain options."
     echo
 
     text_yellow "    Manage Relay (R)"
@@ -33,7 +33,7 @@ menu_main_help ()
     echo
 
     text_yellow "    Show Logs (L)"
-    text_white "    opens the Phantom core logs so you can see what is going on with your node process in real-time."
+    text_white "    opens the PhantomChain logs so you can see what is going on with your node process in real-time."
     echo
 
     text_yellow "    Show Process Monitor (P)"

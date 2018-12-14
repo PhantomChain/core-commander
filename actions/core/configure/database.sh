@@ -19,7 +19,7 @@ core_configure_database ()
     fi
 
     if [[ ! -z "$inputPort" ]]; then
-        sed -i -e "s/ARK_DB_PORT=$ARK_DB_PORT/ARK_DB_PORT=$inputPort/g" "$envFile"
+        sed -i -e "s/PHANTOM_DB_PORT=$PHANTOM_DB_PORT/PHANTOM_DB_PORT=$inputPort/g" "$envFile"
     fi
 
     if [[ ! -z "$inputUsername" ]]; then
@@ -31,9 +31,9 @@ core_configure_database ()
     fi
 
     if [[ ! -z "$inputDatabase" ]]; then
-        sed -i -e "s/PHANTOM_DB_DATABASE=$ARK_DB_DATABASE/PHANTOM_DB_DATABASE=$inputDatabase/g" "$envFile"
+        sed -i -e "s/PHANTOM_DB_DATABASE=$PHANTOM_DB_DATABASE/PHANTOM_DB_DATABASE=$inputDatabase/g" "$envFile"
     else
-        sed -i -e "s/PHANTOM_DB_DATABASE=$ARK_DB_DATABASE/PHANTOM_DB_DATABASE=ark_${CORE_NETWORK}/g" "$envFile"
+        sed -i -e "s/PHANTOM_DB_DATABASE=$PHANTOM_DB_DATABASE/PHANTOM_DB_DATABASE=phantom_${CORE_NETWORK}/g" "$envFile"
     fi
 
     . "$envFile"
