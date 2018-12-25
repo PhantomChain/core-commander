@@ -97,38 +97,10 @@ __core_configure_network ()
 {
     ascii
 
-    info "Which network would you like to configure?"
-
-    validNetworks=("mainnet" "devnet" "testnet")
-
-    select opt in "${validNetworks[@]}"; do
-        case "$opt" in
-            "mainnet")
-                __core_configure_branch "master"
-                __core_configure_core "mainnet"
-                __core_configure_commander "mainnet"
-                __core_configure_environment "mainnet"
-                break
-            ;;
-            "devnet")
-                __core_configure_branch "develop"
-                __core_configure_core "devnet"
-                __core_configure_commander "devnet"
-                __core_configure_environment "devnet"
-                break
-            ;;
-            "testnet")
-                __core_configure_branch "develop"
-                __core_configure_core "testnet"
-                __core_configure_commander "testnet"
-                __core_configure_environment "testnet"
-                break
-            ;;
-            *)
-                echo "Invalid option $REPLY"
-            ;;
-        esac
-    done
+    __core_configure_branch "develop"
+    __core_configure_core "mainnet"
+    __core_configure_commander "mainnet"
+    __core_configure_environment "mainnet"
 
     . "$commander_config"
 }
@@ -163,11 +135,11 @@ __core_configure_environment ()
     fi
 
     if [[ "$1" = "mainnet" ]]; then
-        grep -q '^PHANTOM_P2P_PORT' "$envFile" 2>&1 || echo 'PHANTOM_P2P_PORT=4001' >> "$envFile" 2>&1
+        grep -q '^PHANTOM_P2P_PORT' "$envFile" 2>&1 || echo 'PHANTOM_P2P_PORT=4002' >> "$envFile" 2>&1
     fi
 
     if [[ "$1" = "devnet" ]]; then
-        grep -q '^PHANTOM_P2P_PORT' "$envFile" 2>&1 || echo 'PHANTOM_P2P_PORT=4002' >> "$envFile" 2>&1
+        grep -q '^PHANTOM_P2P_PORT' "$envFile" 2>&1 || echo 'PHANTOM_P2P_PORT=4001' >> "$envFile" 2>&1
     fi
 
     grep -q '^PHANTOM_API_HOST' "$envFile" 2>&1 || echo 'PHANTOM_API_HOST=0.0.0.0' >> "$envFile" 2>&1
