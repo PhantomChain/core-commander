@@ -13,7 +13,7 @@ adduser phantom
 usermod -a -G sudo phantom
 git clone https://github.com/PhantomChain/core-commander
 cd core-commander
-bash commander.sh
+bash PHANTOMcommander.sh
 ```
 
 ## Development
@@ -24,7 +24,7 @@ cd core-commander/.dev/{operating_system}
 vagrant up
 vagrant ssh
 cd /vagrant
-bash commander.sh
+bash PHANTOMcommander.sh
 ```
 
 ## Security
