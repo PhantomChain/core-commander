@@ -97,7 +97,7 @@ __core_configure_network ()
 {
     ascii
 
-    __core_configure_branch "develop"
+    __core_configure_branch "master"
     __core_configure_core "mainnet"
     __core_configure_commander "mainnet"
     __core_configure_environment "mainnet"
