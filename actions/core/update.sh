@@ -38,8 +38,11 @@ core_update ()
 
             heading "Starting Update..."
             git reset --hard | tee -a "$commander_log"
+            git checkout -b "temp" | tee -a "$commander_log"
+            git branch -D "$CORE_BRANCH" | tee -a "$commander_log"
+            git fetch
             git checkout "$CORE_BRANCH" | tee -a "$commander_log"
-            git pull | tee -a "$commander_log"
+            git branch -D "temp" | tee -a "$commander_log"
             lerna clean --yes
             lerna bootstrap
 
