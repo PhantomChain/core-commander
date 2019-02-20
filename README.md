@@ -1,4 +1,4 @@
-# PhantomChain Commander
+# Phantom Chain Commander
 
 <p align="center">
     <img src="https://github.com/PhantomChain/core-commander/blob/master/banner.png" />
