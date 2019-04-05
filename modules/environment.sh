@@ -18,7 +18,7 @@ setup_environment ()
         touch "$commander_config"
 
         echo "CORE_REPO=https://github.com/PhantomChain/core" >> "$commander_config" 2>&1
-        echo "CORE_BRANCH=master" >> "$commander_config" 2>&1
+        echo "CORE_BRANCH=typescript" >> "$commander_config" 2>&1
         echo "CORE_DIR=${HOME}/phantom-core" >> "$commander_config" 2>&1
         echo "CORE_TOKEN=phantom" >> "$commander_config" 2>&1
         echo "CORE_NETWORK=mainnet" >> "$commander_config" 2>&1
