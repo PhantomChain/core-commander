@@ -1,5 +1,7 @@
 # Phantom Chain Commander
 
+**:warning: Deprecated from the 11.03.2019 onwards - Ark Core comes with a built-in CLI since v2.2.0 and provides an installation script :warning:**
+
 <p align="center">
     <img src="https://github.com/PhantomChain/core-commander/blob/master/banner.png" />
 </p>
